@@ -1,25 +1,26 @@
-![TruthLens Banner](images/truthlens-banner.png)
-# 🔎 **TruthLens**
+![TruthLens Banner](https://github.com/afifatima52-blip/TruthLens/raw/main/images/truthlens-banner.png)
 
-## **Global Information Intelligence**
+# 🔎 TruthLens
+
+## Global Information Intelligence
 
 **TruthLens** is a multilingual claim classification project that explores how Machine Learning and Deep Learning models classify online claims into fact-checking categories.
 
-The project uses Natural Language Processing (NLP), text preprocessing, model training, evaluation, and an interactive Streamlit dashboard.
+The project combines Natural Language Processing (NLP), text preprocessing, feature engineering, model training, evaluation, and an interactive Streamlit dashboard.
 
-> **Important:** TruthLens provides experimental machine learning classifications. Its predictions do not establish whether a claim is factually true or false. Always consult reliable evidence and independent fact-checking sources.
+> **Important Notice:** TruthLens provides experimental machine learning classifications. Its predictions do not establish whether a claim is factually true or false. Always consult reliable evidence and independent fact-checking sources.
 
 ---
 
-## **Project Overview**
+## 📌 Project Overview
 
-The goal of TruthLens is to explore multilingual claim classification using different machine learning approaches and compare their performance.
+The goal of TruthLens is to explore multilingual claim classification using different Machine Learning and Deep Learning approaches and compare their performance.
 
-The project includes:
+### Key Features
 
 - Dataset exploration and preprocessing
 - Exploratory Data Analysis (EDA)
-- Natural Language Processing
+- Natural Language Processing (NLP)
 - Text feature engineering
 - Machine Learning classification
 - Deep Learning with Bidirectional LSTM
@@ -27,22 +28,28 @@ The project includes:
 - Interactive Streamlit dashboard
 - Three-model prediction comparison
 
-## **Dataset**
+---
+
+## 📂 Dataset
 
 TruthLens uses the **X-FACT dataset**.
 
-- Total records: 19,079
-- Total original columns: 17
-- Languages: 13
-- Classification categories: 7
+| Dataset Information | Details |
+|---|---|
+| Total Records | 19,079 |
+| Original Columns | 17 |
+| Languages | 13 |
+| Classification Categories | 7 |
 
 **Languages:** Portuguese, Indonesian, Arabic, Georgian, Polish, Tamil, Spanish, Italian, Turkish, Hindi, German, Romanian, and Serbian.
 
-**Dataset source:** [X-FACT on Hugging Face](https://huggingface.co/datasets/utahnlp/x-fact)
+**Dataset Source:** [X-FACT Dataset on Hugging Face](https://huggingface.co/datasets/utahnlp/x-fact)
 
-## **Classification Categories**
+**Dataset Note:** The original dataset is not included in this GitHub repository because of its file size. Download it from the source above and place the training CSV file at `data/xfact_train.csv` before running the notebooks.
 
-The dataset contains seven categories:
+---
+
+## 🏷️ Classification Categories
 
 1. False
 2. Partly true / misleading
@@ -52,10 +59,12 @@ The dataset contains seven categories:
 6. Complicated / hard to categorise
 7. Other
 
-## **Technologies Used**
+---
+
+## 🛠️ Technologies Used
 
 | Area | Technologies |
-| :--- | :--- |
+|---|---|
 | Programming | Python |
 | Data Analysis | Pandas, NumPy |
 | Visualization | Matplotlib, Seaborn, Plotly |
@@ -63,45 +72,49 @@ The dataset contains seven categories:
 | Deep Learning | TensorFlow, Keras |
 | NLP | TF-IDF, Character-level Tokenization |
 | Dashboard | Streamlit |
-| Model Storage | Joblib |
+| Model Storage | Joblib, Pickle, Keras |
 | Development | VS Code, Jupyter Notebook |
 | Environment | Conda |
 
-## **Machine Learning Models**
+---
 
-The following models were evaluated:
+## 🤖 Machine Learning Models
 
 - Logistic Regression
 - Linear Support Vector Classifier (LinearSVC)
-- Tuned LinearSVC
+- Tuned LinearSVC using GridSearchCV
 
-### **Machine Learning Results**
+### Machine Learning Results
 
 | Model | Accuracy | Balanced Accuracy | Macro F1 |
-| :--- | ---: | ---: | ---: |
+|---|---:|---:|---:|
 | Logistic Regression | 36.92% | 44.75% | 32.24% |
 | LinearSVC | 43.40% | 38.34% | 36.14% |
 | Tuned LinearSVC | 43.74% | 44.62% | 36.58% |
 
 **Best Macro F1:** Tuned LinearSVC — 36.58%.
 
-## **Deep Learning Models**
+---
+
+## 🧠 Deep Learning Models
 
 Two Bidirectional LSTM experiments were developed:
 
 - Original Bidirectional LSTM
 - Class-Weighted Bidirectional LSTM
 
-### **Deep Learning Results**
+### Deep Learning Results
 
 | Model | Accuracy | Balanced Accuracy | Macro F1 |
-| :--- | ---: | ---: | ---: |
+|---|---:|---:|---:|
 | Original Bidirectional LSTM | 45.05% | 25.63% | 24.46% |
 | Class-Weighted Bidirectional LSTM | 27.02% | 40.92% | 25.70% |
 
 Class weighting improved balanced accuracy and Macro F1, but reduced overall accuracy.
 
-## **Model Comparison Dashboard**
+---
+
+## 📊 Model Comparison Dashboard
 
 TruthLens includes an interactive Streamlit dashboard that compares predictions from three models:
 
@@ -109,15 +122,20 @@ TruthLens includes an interactive Streamlit dashboard that compares predictions 
 2. Class-Weighted Bidirectional LSTM
 3. Tuned LinearSVC
 
-Users can enter a claim and view all three model predictions together.
+Users can enter a claim and view predictions from all three models together.
 
-## **Project Structure**
+---
+
+## 🗂️ Project Structure
 
 ```text
 TruthLens/
 │
-├── data/
-│   └── xfact_train.csv
+├── dashboard/
+│   └── app.py
+│
+├── models/
+│   └── Saved Models and Preprocessing Artifacts
 │
 ├── notebooks/
 │   ├── 01_dataset_loading.ipynb
@@ -125,49 +143,70 @@ TruthLens/
 │   ├── 03_machine_learning.ipynb
 │   └── 04_deep_learning.ipynb
 │
-├── src/
-│
-├── models/
-│
-├── dashboard/
-│   └── app.py
-│
 ├── reports/
+│   ├── eda_findings.md
+│   ├── ml_evaluation.md
+│   ├── deep_learning_evaluation.md
+│   └── deep_learning_metrics.csv
 │
 ├── README.md
 ├── requirements.txt
 └── .gitignore
 ```
 
-## **How to Run the Dashboard**
+---
 
-Activate the project environment:
+## ⚙️ Installation & Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/afifatima52-blip/TruthLens.git
+```
+
+### 2. Open the Project Directory
+
+```bash
+cd TruthLens
+```
+
+### 3. Create a Conda Environment
+
+```bash
+conda create -n truthlens_env python=3.11
+```
+
+### 4. Activate the Environment
 
 ```bash
 conda activate truthlens_env
 ```
 
-Run the Streamlit application from the project root:
+### 5. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 6. Download the Dataset
+
+Download the X-FACT dataset from Hugging Face and place the training CSV file inside the `data/` directory using this filename:
+
+`xfact_train.csv`
+
+### 7. Run the Streamlit Dashboard
 
 ```bash
 python -m streamlit run dashboard/app.py
 ```
 
-## **Limitations**
+---
 
-- Model performance is limited and varies across classification categories.
-- The dataset contains an imbalanced distribution of labels.
-- Multilingual text classification presents language-specific challenges.
-- Predictions may be incorrect, even for scientifically established claims.
-- Model outputs should not be treated as verified facts.
+## 📑 Project Reports
 
-TruthLens is an experimental learning and portfolio project, not an independent fact-checking authority.
+Detailed project findings and evaluation reports are available in the `reports/` directory:
 
-## **Project Reports**
-
-Detailed evaluation and analysis reports are maintained in the `reports/` directory.
-
-## **Author**
-
-**Afifa Fatima**
-Data Science Portfolio Project · 2026
+- **EDA Findings:** Dataset exploration and analysis.
+- **Machine Learning Evaluation:** ML model performance and comparisons.
+- **Deep Learning Evaluation:** Bidirectional LSTM experiments and results.
+- **Deep Learning Metrics:** Model evaluation metrics in
