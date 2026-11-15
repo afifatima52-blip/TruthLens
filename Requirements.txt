@@ -1,0 +1,42 @@
+# Core Data Science
+numpy
+pandas
+scipy
+
+# Data Visualization
+matplotlib
+seaborn
+plotly
+wordcloud
+
+# Machine Learning
+scikit-learn
+xgboost
+imbalanced-learn
+
+# Deep Learning
+tensorflow
+torch
+
+# Natural Language Processing
+nltk
+spacy
+transformers
+datasets
+sentence-transformers
+
+# Dashboard
+streamlit
+
+# Model Saving and Utilities
+joblib
+tqdm
+openpyxl
+pyarrow
+
+# Data Collection and Processing
+requests
+beautifulsoup4
+
+# Statistical Analysis
+statsmodels
