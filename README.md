@@ -1,3 +1,4 @@
+![TruthLens Banner](images/truthlens-banner.png)
 # 🔎 **TruthLens**
 
 ## **Global Information Intelligence**
